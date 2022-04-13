@@ -1,0 +1,82 @@
+$background-color: #1E1E1E
+$alt-background-color: #262626
+$foreground-color: #D4D4D4
+$background-font-size: 41vw
+    
+html *
+    color: $foreground-color
+    font-size: 100%
+
+body
+    background-color: $background-color
+    font-family: "Lucida Console", "Courier New", monospace
+    overflow: hidden
+    height: 100%
+    
+h1
+    color: $foreground-color
+    font-size: 3rem
+    font-weight: normal
+
+span
+    color: $foreground-color
+
+.container
+    height: 100%
+
+@keyframes blink
+    0%
+        opacity: 1
+    49%
+        opacity: 1
+    50%
+        opacity: 0
+    100%
+        opacity: 0
+        
+.typeWriter::after
+    content: "|"
+    width: 0
+    height: 0
+    margin-left: -2px
+    background: $foreground-color
+    display: inline-block
+    opacity: 1
+    font-size: 1.5rem
+
+.typeWriter
+    font-size: 1.5rem
+    
+.blinking::after
+    animation: blink 1s steps(2) infinite
+
+.backgroundText
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: -1
+    overflow: hidden
+    color: $alt-background-color 
+    font-size: $background-font-size
+
+    -webkit-user-select: none    
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    
+    white-space: -moz-no-wrap
+    white-space: -o-no-wrap
+    white-space: nowrap
+
+.introText
+    display: block
+    margin: 0
+
+.introContainer
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 100%
+    transform: translate(-22%, -30%)
+

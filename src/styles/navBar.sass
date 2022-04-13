@@ -1,0 +1,41 @@
+
+.navigationList
+    list-style-type: none
+    padding: 0
+    
+.navigationList li
+    display: inline-block
+    margin-left: .5%
+    text-decoration: underline
+    font-size: .85rem
+
+.navItem:last-child
+    padding-right: .1%
+    
+.navigationList li:hover
+    color: white
+    
+
+.navigationList::before
+    content: "["
+    width: 0
+    height: 0
+    display: inline-block
+    opacity: 1
+    font-size: .85rem
+
+.navigationList::after
+    content: "]"
+    width: 0
+    height: 0
+    display: inline-block
+    opacity: 1
+    font-size: .85rem
+
+.navItem:not(:last-child)::after
+    content: ","
+    width: 0
+    height: 0
+    display: inline-block
+    opacity: 1
+    font-size: .85rem
