@@ -1,0 +1,58 @@
+$alt-background-color: #262626
+$desc-color: #cacaca
+$tag-color: #a2a1a1
+$highlight-color: #7d4cd7
+
+.projectContainer
+    position: relative
+    box-sizing: border-box
+    display: inline-block
+    padding: 0% 3% 0% 3%
+    background-color: $alt-background-color
+    border-radius: 4px
+    margin: .2%
+    text-align: center
+
+.projectContainer::before
+    content: ''
+    width: 2px
+    height: 100%
+    left: 0
+    bottom: 0
+    position: absolute
+    background-color: $highlight-color
+
+.projectTitle
+    font-weight: bold
+
+.projectDescription
+    font-weight: lighter
+    font-size: 0.8rem
+    margin-bottom: 10%
+    color: $desc-color
+
+.tagContainer
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 10%
+    margin-left: auto
+    margin-right: auto
+    width: 100%
+
+.projectTag
+    font-size: 0.75rem
+    color: $tag-color
+    margin-right: 2%
+    margin-left: 2%
+
+.projectTag:hover
+    color: $highlight-color
+    cursor: default
+
+.allProjects
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 10px
+    width: 50%
+    margin: auto

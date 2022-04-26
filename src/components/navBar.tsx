@@ -2,18 +2,19 @@ import { Link } from "gatsby"
 import React from "react" 
 import '../styles/navBar.sass'
 
-type NavBarProps = {
-    fsize?: number
-}
 
-const NavBar = ({fsize}: NavBarProps) => {
+const Navbar = () => {
     return (
-        <ul className="navigationList navigationMenu" style={{fontSize: fsize + "rem"}}>
-            <Link to="/projects" className="navItem"><li>projects</li></Link>
-            <Link to="/aboutMe" className="navItem"><li>aboutMe</li></Link>
-            <Link to="/contact" className="navItem"><li>contact</li></Link>
-        </ul>
+        <nav className="navbarContainer">
+            <div className="logo">BB</div>
+            <div className="links">
+                <Link to="/" className="link"><li>home</li></Link>
+                <Link to="/projects" className="link"><li>projects</li></Link>
+                <Link to="/aboutMe" className="link"><li>aboutMe</li></Link>
+                <Link to="/contact" className="link"><li>contact</li></Link>
+            </div>
+        </nav>
     )
   }
   
-  export default NavBar
+  export default Navbar

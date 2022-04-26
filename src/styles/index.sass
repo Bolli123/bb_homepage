@@ -1,8 +1,17 @@
 $background-color: #1E1E1E
 $alt-background-color: #262626
 $foreground-color: #D4D4D4
+$highlight-color: #6441a5
 $background-font-size: 41vw
-    
+
+@function shadow($color, $offset, $length)
+    $ret_val: null
+    $curr: 0
+    @for $i from 0 through $length
+        $curr: $curr + $offset
+        $ret_val: append($ret_val, $curr + px $curr + px  0 $color, comma)
+    @return $ret_val
+  
 html *
     color: $foreground-color
     font-size: 100%
@@ -43,6 +52,7 @@ span
     display: inline-block
     opacity: 1
     font-size: 1.5rem
+    color: $highlight-color
 
 .typeWriter
     font-size: 1.5rem
@@ -71,7 +81,8 @@ span
 
 .introText
     display: block
-    margin: 0
+    margin: 0 0 0.5% 0
+
 
 .introContainer
     position: absolute
@@ -80,3 +91,69 @@ span
     width: 100%
     transform: translate(-22%, -30%)
 
+input
+    background-color: $alt-background-color
+    border: 0
+    width: 100%
+    padding: 2%
+
+button
+    background-color: $alt-background-color
+    display: block
+
+.header
+    text-align: center
+    margin-top: 6%
+    display: block
+    font-weight: bolder
+    font-family: bungee, sans-serif
+    font-weight: 1000
+    text-shadow: shadow($highlight-color, 0.25, 25)
+
+.logo
+    font-family: bungee, sans-serif
+    font-weight: 1000
+    font-size: 5rem
+    text-shadow: shadow($highlight-color, 0.25, 50)
+    letter-spacing: -.3em
+
+.navigationList
+    list-style-type: none
+    padding: 0
+    
+.navigationList li
+    display: inline-block
+    margin-left: .5%
+    text-decoration: underline
+    font-size: .85rem
+
+.listItem:last-child
+    padding-right: .1%
+    
+.navigationList li:hover
+    color: white
+    
+
+.navigationList::before
+    content: "["
+    width: 0
+    height: 0
+    display: inline-block
+    opacity: 1
+    font-size: .85rem
+
+.navigationList::after
+    content: "]"
+    width: 0
+    height: 0
+    display: inline-block
+    opacity: 1
+    font-size: .85rem
+
+.listItem:not(:last-child)::after
+    content: ","
+    width: 0
+    height: 0
+    display: inline-block
+    opacity: 1
+    font-size: .85rem

@@ -1,0 +1,100 @@
+[
+    {
+        "title": "Representation learning",
+        "description": "Representation learning for multivariate time series for detecting artefacts in sleep data assist automatic analysis of sleep recordings.",
+        "image": "",
+        "links": [
+            "http://hdl.handle.net/1946/39348"
+        ],
+        "tags": [
+            "Python"
+        ]
+    },
+    {
+        "title": "Garry's Mod",
+        "description": "Flappy Bird forritaður í Lua/GLua.",
+        "image": "",
+        "links": [
+            
+        ],
+        "tags": [
+            "Lua/GLua"
+        ]
+        
+    },
+    {
+        "title": "Sorting visualizer in React",
+        "description": "",
+        "image": "",
+        "links": [
+            "https://github.com/bjornt18/ReactSortingVisualizer"
+        ],
+        "tags": [
+            "React",
+            "Javascript",
+            "CSS"
+        ]
+    },
+    {
+        "title": "Flappy Bird in Lua",
+        "description": "A flappy bird clone made to be as authentic to the original game with a few gameplay additions.",
+        "image": "",
+        "links": [
+            "https://github.com/bjornt18/flappybird/"
+        ],
+        "tags": [
+            "Lua/GLua"
+        ]
+    },
+    {
+        "title": "C# API",
+        "description": "Flappy Bird forritaður í Lua/GLua.",
+        "image": "",
+        "links": [
+            "https://github.com/bjornt18/flappybird/"
+        ],
+        "tags": [
+            ".NET",
+            "C#"
+        ]
+    },
+    {
+        "title": "Networked Pong",
+        "description": "A multiplayer pong game that can be played on seperate computers through the windows terminal.",
+        "image": "",
+        "links": [
+            "https://github.com/bjornt18/flappybird/"
+        ],
+        "tags": [
+            "C/C++",
+            "Bash"
+        ]
+    },
+    {
+        "title": "Cinema App",
+        "description": "An app that aggregates movies being shown in Icelandic cinemas.",
+        "image": "",
+        "links": [
+            "https://github.com/bjornt18/flappybird/"
+        ],
+        "tags": [
+            "React",
+            "Javascript",
+            "CSS"
+        ]
+    },
+    {
+        "title": "Homepage",
+        "description": "A simple portfolio homepage created with Gatsby and SASS",
+        "image": "",
+        "links": [
+            "https://github.com/bjornt18/bb_homepage"
+        ],
+        "tags": [
+            "React",
+            "Typescript",
+            "SASS"
+        ]
+    }
+
+]
