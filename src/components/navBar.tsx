@@ -1,18 +1,20 @@
 import { Link } from "gatsby"
 import React from "react" 
-import '../styles/navBar.sass'
+import '../styles/navbar.sass'
 
 
 const Navbar = () => {
+    const activeStyle = {
+        textDecoration: "underline",
+        textDecorationColor: "#0078d7"
+    }
     return (
         <nav className="navbarContainer">
-            <div className="logo">BB</div>
-            <div className="links">
-                <Link to="/" className="link"><li>home</li></Link>
-                <Link to="/projects" className="link"><li>projects</li></Link>
-                <Link to="/aboutMe" className="link"><li>aboutMe</li></Link>
-                <Link to="/contact" className="link"><li>contact</li></Link>
-            </div>
+            <Link className="logo" to="/">BB</Link>
+            <Link to="/" className="link" activeStyle={activeStyle}>home</Link>
+            <Link to="/projects" className="link" activeStyle={activeStyle}>projects</Link>
+            <Link to="/aboutMe" className="link" activeStyle={activeStyle}>aboutme</Link>
+            <Link to="/contact" className="link" activeStyle={activeStyle}>contact</Link>
         </nav>
     )
   }

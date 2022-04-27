@@ -1,0 +1,7 @@
+@function shadow($color, $offset, $length)
+    $ret_val: null
+    $curr: 0
+    @for $i from 0 through $length
+        $curr: $curr + $offset
+        $ret_val: append($ret_val, $curr + px $curr + px  0 $color, comma)
+    @return $ret_val

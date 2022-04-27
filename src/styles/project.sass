@@ -1,14 +1,11 @@
-$alt-background-color: #262626
-$desc-color: #cacaca
-$tag-color: #a2a1a1
-$highlight-color: #7d4cd7
+@use 'variables'
 
 .projectContainer
     position: relative
     box-sizing: border-box
     display: inline-block
     padding: 0% 3% 0% 3%
-    background-color: $alt-background-color
+    background-color: variables.$alt-background-color
     border-radius: 4px
     margin: .2%
     text-align: center
@@ -20,7 +17,7 @@ $highlight-color: #7d4cd7
     left: 0
     bottom: 0
     position: absolute
-    background-color: $highlight-color
+    background-color: variables.$highlight-color
 
 .projectTitle
     font-weight: bold
@@ -29,7 +26,7 @@ $highlight-color: #7d4cd7
     font-weight: lighter
     font-size: 0.8rem
     margin-bottom: 10%
-    color: $desc-color
+    color: variables.$desc-color
 
 .tagContainer
     position: absolute
@@ -42,12 +39,12 @@ $highlight-color: #7d4cd7
 
 .projectTag
     font-size: 0.75rem
-    color: $tag-color
+    color: variables.$tag-color
     margin-right: 2%
     margin-left: 2%
 
 .projectTag:hover
-    color: $highlight-color
+    color: variables.$highlight-color
     cursor: default
 
 .allProjects

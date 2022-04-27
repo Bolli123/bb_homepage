@@ -19,7 +19,7 @@ const Projects = () => {
             <h1 className="header" style={{transform: 'translateY(' + headerPos + ')'}}>Projects</h1>
             <div className="allProjects">
               {Object.keys(projects).map((key, i) => (
-                    <Project project={projects[i]}></Project>
+                    <Project key={key+1} project={projects[i]}></Project>
                 ))}
             </div>
         </div>

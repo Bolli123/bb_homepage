@@ -1,40 +1,35 @@
-.navigationList
-    list-style-type: none
-    padding: 0
-    
-.navigationList li
-    display: inline-block
-    margin-left: .5%
-    text-decoration: underline
-    font-size: .85rem
+@use 'variables'
+@use 'functions'
+nav a
+    text-decoration: none
 
-.navItem:last-child
-    padding-right: .1%
-    
-.navigationList li:hover
-    color: white
-    
+.links
 
-.navigationList::before
-    content: "["
-    width: 0
-    height: 0
-    display: inline-block
-    opacity: 1
-    font-size: .85rem
+.link
+    font-family: bungee, sans-serif
+    font-weight: 700
+    font-size: 1.5rem
+    display: inline
 
-.navigationList::after
-    content: "]"
-    width: 0
-    height: 0
-    display: inline-block
-    opacity: 1
-    font-size: .85rem
+.navbarContainer
+    display: grid
+    grid-template-columns: .1fr .1fr .1fr .1fr .1fr
+    align-items: center
 
-.navItem:not(:last-child)::after
-    content: ","
-    width: 0
-    height: 0
+
+.links
     display: inline-block
-    opacity: 1
-    font-size: .85rem
+
+.logo
+    font-family: bungee, sans-serif
+    display: inline-block
+    font-weight: 900
+    font-size: 5rem
+    text-shadow: functions.shadow(variables.$highlight-color, 0.25, 20)
+    letter-spacing: -.3em
+    width: 7rem
+    line-height: 5rem
+    transition: text-shadow 0.5s linear
+
+.logo:hover
+    text-shadow: functions.shadow(variables.$highlight-color, 0.25, 25)

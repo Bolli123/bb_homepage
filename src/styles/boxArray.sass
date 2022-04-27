@@ -1,0 +1,33 @@
+@use 'variables'
+.boxArrayContainer
+    height: 50vh
+    width: 100%
+    overflow: hidden
+    position: absolute
+    bottom: 0
+    left: 0
+
+.box
+    width: 2vw
+    height: 2vw
+    background-color: variables.$background-color
+    float: left
+    
+
+.box::before
+    content: ''
+    position: relative
+    top: 0.5vw
+    left: 0.5vw
+    width: 1vw
+    height: 1vw
+    display: inline-block
+    background-color: variables.$alt-background-color
+    transition: 7s ease-out
+    
+
+.box:hover::before
+    background-color: variables.$highlight-color
+    transition: 0s
+    
+    

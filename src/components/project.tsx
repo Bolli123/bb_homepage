@@ -17,7 +17,7 @@ const Project = ({project} : {project: ProjectProps}) => {
             <p className="projectDescription">{project.description}</p>
             <div className="tagContainer">
                 {Object.keys(project.tags).map((key, i) => (
-                    <span className="projectTag">{project.tags[i]}</span>
+                    <span className="projectTag" key={key+1}>{project.tags[i]}</span>
                 ))}
             </div>
         </div>
