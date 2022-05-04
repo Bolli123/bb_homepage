@@ -1,23 +1,43 @@
 @use 'variables'
 
+
+
 .projectContainer
     position: relative
     box-sizing: border-box
     display: inline-block
     padding: 0% 3% 0% 3%
-    background-color: variables.$alt-background-color
-    border-radius: 4px
+    background-color: variables.$background-color-lighter
     margin: .2%
     text-align: center
+    transform-style: preserve-3d
+
+.projectContainer::before, .projectContainer::after
+    content: ''
+    position: absolute
+    width: 0
+    height: 0
+    border-left: 6px solid transparent
+    border-bottom: 6px solid variables.$highlight-color
+    transform: translateZ(-1px)
 
 .projectContainer::before
-    content: ''
-    width: 2px
-    height: 100%
     left: 0
+
+.projectContainer::after
+    right: 0
     bottom: 0
-    position: absolute
-    background-color: variables.$highlight-color
+
+.projectContainer:hover::before
+    transform: translate(-6px) 
+
+.projectContainer:hover::after
+    transform: translate(0px, 6px) rotate(180deg) 
+
+
+.projectContainer:hover
+    transform: translate(6px, -6px)
+    box-shadow: -6px 6px variables.$highlight-color
 
 .projectTitle
     font-weight: bold
@@ -26,7 +46,7 @@
     font-weight: lighter
     font-size: 0.8rem
     margin-bottom: 10%
-    color: variables.$desc-color
+    color: variables.$text-color-dark
 
 .tagContainer
     position: absolute
@@ -39,7 +59,7 @@
 
 .projectTag
     font-size: 0.75rem
-    color: variables.$tag-color
+    color: variables.$text-color-darker
     margin-right: 2%
     margin-left: 2%
 
@@ -53,3 +73,14 @@
     grid-gap: 10px
     width: 50%
     margin: auto
+
+@media only screen and (max-width: 1200px)
+    body
+        overflow-y: scroll
+
+    .allProjects
+        grid-template-columns: 1fr
+        width: 80%
+    
+    .backgroundText
+        visibility: hidden

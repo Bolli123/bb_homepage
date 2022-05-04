@@ -66,7 +66,7 @@ const IndexPage = () => {
         <div className="container">
           <div className="backgroundText"> &lt;&nbsp;/&gt; </div>
           <div className="introContainer">
-            <h1 className="introText">hello, world;</h1>
+            <h1 className="introText">hello, world</h1>
             <span className={"typeWriter " + (cursorBlinking ? "" : "blinking")}>I'm {selectedAbout.slice(0, aboutIndex)}</span>
             <ul className="navigationList navigationMenu">
                 <Link to="/projects" className="listItem"><li>projects</li></Link>

@@ -7,7 +7,6 @@ const Contact = () => {
     return (
       <Layout>
         <div>
-            <div className="backgroundText"> 	&#123;&nbsp;&#125; </div>
             <ContactForm> </ContactForm>
         </div>
       </Layout>

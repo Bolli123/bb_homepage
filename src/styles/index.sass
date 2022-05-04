@@ -2,22 +2,21 @@
 @use 'functions'
 
 html *
-    color: variables.$foreground-color
-    font-size: 100%
+    color: variables.$text-color
 
 body
     background-color: variables.$background-color
-    font-family: "Lucida Console", "Courier New", monospace
+    font-family: variables.$font-terminal
     overflow: hidden
     height: 100%
     
 h1
-    color: variables.$foreground-color
-    font-size: 3rem
+    color: variables.$text-color
+    font-size: calc(30px + 1.2vw)
     font-weight: normal
 
 span
-    color: variables.$foreground-color
+    color: variables.$text-color
 
 .container
     height: 100%
@@ -31,23 +30,22 @@ span
         opacity: 0
     100%
         opacity: 0
+    
+.blinking::after
+    animation: blink 1s steps(2) infinite
         
 .typeWriter::after
     content: "|"
     width: 0
     height: 0
     margin-left: -2px
-    background: variables.$foreground-color
+    background: variables.$text-color
     display: inline-block
     opacity: 1
-    font-size: 1.5rem
     color: variables.$highlight-color
 
 .typeWriter
     font-size: 1.5rem
-    
-.blinking::after
-    animation: blink 1s steps(2) infinite
 
 .backgroundText
     position: absolute
@@ -56,8 +54,9 @@ span
     transform: translate(-50%, -50%)
     z-index: -1
     overflow: hidden
-    color: variables.$alt-background-color 
+    color: variables.$background-color-lighter 
     font-size: variables.$background-font-size
+    text-shadow: functions.shadow(variables.$background-color-lightest, 0.25, 20)
 
     -webkit-user-select: none    
     -moz-user-select: none
@@ -72,6 +71,9 @@ span
     display: block
     margin: 0 0 0.5% 0
 
+.introText::after
+    content: ';'
+    text-shadow: functions.shadow(variables.$highlight-color, 0.2, 10)
 
 .introContainer
     position: absolute
@@ -80,21 +82,16 @@ span
     width: 100%
     transform: translate(-22%, -30%)
 
-input
-    background-color: variables.$alt-background-color
-    border: 0
-    width: 100%
-    padding: 2%
-
 button
-    background-color: variables.$alt-background-color
+    background-color: variables.$background-color-lighter
     display: block
 
 .header
+    margin-top: 5%
     text-align: center
     display: block
     font-weight: bolder
-    font-family: bungee, sans-serif
+    font-family: variables.$font-headings
     font-weight: 1000
     text-shadow: functions.shadow(variables.$highlight-color, 0.25, 20)
 
@@ -104,42 +101,30 @@ button
     
 .navigationList li
     display: inline-block
-    margin-left: .5%
     text-decoration: underline
-    font-size: .85rem
+    font-size: 15px
 
-.listItem:last-child
-    padding-right: .1%
-    
 .navigationList li:hover
     color: white
     
-
 .navigationList::before
     content: "["
-    width: 0
-    height: 0
     display: inline-block
-    opacity: 1
-    font-size: .85rem
+    font-size: 15px
 
 .navigationList::after
     content: "]"
-    width: 0
-    height: 0
     display: inline-block
-    opacity: 1
-    font-size: .85rem
+    font-size: 15px
 
 .listItem:not(:last-child)::after
     content: ","
-    width: 0
-    height: 0
     display: inline-block
-    opacity: 1
-    font-size: .85rem
+    font-size: 15px
 
 footer
-    position: absolute
+    position: fixed
     bottom: 1%
-    color: variables.$tag-color
+    right: 1%
+    color: variables.$text-color-darker
+    font-size: .7rem

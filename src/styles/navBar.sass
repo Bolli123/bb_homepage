@@ -1,35 +1,89 @@
 @use 'variables'
 @use 'functions'
+
+body
+    margin-top: 8vh
+
 nav a
     text-decoration: none
 
+nav
+    position: absolute
+    top: 0
+    left: 0
+    display: flex
+    align-items: center
+    background-color: variables.$background-color-lighter
+    width: 100%
+    height: 8vh
+    min-height: 60px
+
 .links
+    width: 50%
+    padding-left: 2% 
+    flex-grow: 6
 
 .link
-    font-family: bungee, sans-serif
-    font-weight: 700
+    float: left
+    font-family: variables.$font-headings
     font-size: 1.5rem
-    display: inline
+    padding: 0 1% 0 1%
+    color: variables.$text-color-darker
+    transition: color 1s
+    
+.link:hover
+    color: variables.$text-color
+    transition: color 0.1s
 
-.navbarContainer
-    display: grid
-    grid-template-columns: .1fr .1fr .1fr .1fr .1fr
-    align-items: center
-
-
-.links
+.link::before
+    content:'>\a0'
     display: inline-block
+    text-decoration: none !important
+    font-weight: 10
+    transition: transform .2s
+    
 
-.logo
-    font-family: bungee, sans-serif
-    display: inline-block
-    font-weight: 900
-    font-size: 5rem
-    text-shadow: functions.shadow(variables.$highlight-color, 0.25, 20)
-    letter-spacing: -.3em
-    width: 7rem
-    line-height: 5rem
-    transition: text-shadow 0.5s linear
+.link:hover::before
+    transform: rotate(90deg) translate(25%)
+    transition: transform .2s
+    color: variables.$text-color-darker
+    
+.activeLink
+    text-decoration: underline
+    text-decoration-color: variables.$highlight-color
+    color: variables.$text-color
 
-.logo:hover
-    text-shadow: functions.shadow(variables.$highlight-color, 0.25, 25)
+.activeLink::before
+    transform: rotate(90deg) translate(25%)
+    color: variables.$text-color-darker
+
+.logoContainer
+    padding-left: 1%
+
+.personalLogo
+    flex-grow: 1
+    width: 4vw
+    min-width: 70px
+    fill: variables.$background-color-lighter
+    stroke-width: 30
+    stroke: variables.$text-color
+    transition: fill .3s
+    overflow: visible
+
+.personalLogo:hover
+    fill: variables.$text-color
+    transition: fill .3s
+
+.navGithub
+    flex-grow: .05
+    fill: none
+    stroke-width: 2
+    stroke-linecap: round
+    stroke: variables.$text-color
+    width: 40px
+    height: 40px
+    transition: all .3s
+
+.navGithub:hover
+    stroke: variables.$highlight-color
+    transition: all .3s

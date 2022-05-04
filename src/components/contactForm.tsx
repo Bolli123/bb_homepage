@@ -9,12 +9,18 @@ const ContactForm = () => {
       <div className="contactFormContainer">
         <h1 className="header">CONTACT</h1>
         <form className="contactForm" action="https://public.herotofu.com/v1/7d248730-c426-11ec-a557-034a17e2da28" method="POST">
-            <p>Name</p>
-            <input type="text" id="inpName" name="inpName" className="textInput"/>
-            <p>Email</p>
-            <input type="text" id="inpEmail" name="inpEmail" className="textInput"/>
-            <p>Message</p>
-            <input type="text" id="inpMsg" name="inpMsg" className="textInput"/>
+          <div className="inputContainer">
+            <input id="inpName" name="inpName" className="textInput" placeholder=" "/>
+            <label className="inputLabel">Name</label>
+          </div>
+          <div className="inputContainer">
+            <input  placeholder=" " id="inpEmail" name="inpEmail" className="textInput"/>
+            <label className="inputLabel">Email</label>
+          </div>
+          <div className="inputContainer">
+            <textarea  placeholder=" " id="inpMsg" name="inpMsg" className="textInput resizable"/>
+            <label className="inputLabel txtAreaLbl">Message</label>
+          </div>
             <button type="submit" value="Submit" className="contactSubmit">Submit</button>
         </form>
       </div>

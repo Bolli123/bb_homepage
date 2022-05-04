@@ -13,7 +13,7 @@ const Layout = ({ children }: ChildrenProps ) => {
                 { children }
             </div>
             <footer className="footer">
-                Copyright &copy;2022 Björn Breki
+                Designed and implemented by Björn Breki
             </footer>
         </div>
     )
