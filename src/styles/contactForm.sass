@@ -9,9 +9,7 @@
 @media only screen and (max-width: 1000px)
     .contactForm
         width: 80%
-        margin-top: 5%
-    nav
-        visibility: hidden
+        margin-top: 10vh
 
 .inputContainer
     position: relative
@@ -58,20 +56,26 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label
     overflow: auto
 
 .contactSubmit
-    margin-right: auto
-    margin-left: auto
-    margin-top: 5%
-    text-decoration: none
-    color: variables.$text-color
-    background-color: variables.$background-color
-    border: 1px solid variables.$text-color
-    border-radius: 2px
-    padding: 10px 15px 10px 15px
     font-size: 20px
     font-family: variables.$font-headings
     font-weight: 700
 
+    margin-right: auto
+    margin-left: auto
+    margin-top: 5%
+
+    text-decoration: none
+    color: variables.$text-color
+    background-color: variables.$background-color
+    border: .05em solid variables.$text-color
+    border-radius: .2em
+    padding: .5em 1em .5em 1em
+    transition: color .2s, background-color .2s
+
+
 .contactSubmit:hover
     cursor: pointer
-    background-color: variables.$background-color-lighter
+    background-color: variables.$text-color
+    color: variables.$background-color
+    transition: color .2s, background-color .2s
 

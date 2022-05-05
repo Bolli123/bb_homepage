@@ -1,10 +1,6 @@
 import React from "react"
 
 const ContactForm = () => {
-    function handleSubmit(e : Event) {
-      e.preventDefault();
-      console.log()
-    }
     return (
       <div className="contactFormContainer">
         <h1 className="header">CONTACT</h1>
