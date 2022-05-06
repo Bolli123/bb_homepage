@@ -1,8 +1,6 @@
 @use 'variables'
 @use 'functions'
 
-@media only screen and (max-width: 1000px)
-    
 body
     margin-top: 8vh
 
@@ -20,11 +18,6 @@ nav
     height: 8vh
     min-height: 60px
 
-/* .links
-    width: 50%
-    padding-left: 2% 
-    flex-grow: 6 */
-
 svg
     fill: none
     stroke-width: 2
@@ -36,59 +29,19 @@ svg:hover
     stroke: variables.$highlight-color
     transition: all .3s
 
-.linksContainer
-    position: absolute
-    top: max(8vh, 60px)
-    right: 0
-    width: 15vw
-    min-width: 200px
-    height: 40vh
-    min-height: 250px
-    text-align: center
-    background-color: variables.$background-color-lighter
-    webkit-box-shadow: -2px 2px 2px 0px rgba(53,53,53,1)
-    -moz-box-shadow: -2px 2px 2px 0px rgba(53,53,53,1)
-    box-shadow: -2px 2px 2px 0px rgba(53,53,53,1)
-    transition: right .5s, visibility .5s
-    z-index: 11
-    
-.links
-    position: relative
-    
-
-.hiddenLinks
-    right: calc(-200px + -15vw)
-
 .link
-    position: relative
-    display: block
     font-family: variables.$font-headings
     font-size: 1.5rem
-    padding-bottom: 10%
-    color: variables.$text-color-darker
-    transition: color 1s
-    
+
 .link:hover
     color: variables.$text-color
     transition: color 0.1s
+    text-decoration-color: variables.$highlight-color
 
-.link::after
-    content:''
-    position: absolute
-    width: 50%
-    height: 1px
-    top: 1.75em
-    left: 25%
-    background-color: variables.$background-color-lightest
-    
 .activeLink
     text-decoration: underline
     text-decoration-color: variables.$highlight-color
-    color: variables.$text-color
-
-.activeLink::before
-    transform: rotate(90deg) translate(25%)
-    color: variables.$text-color-darker
+    color: variables.$text-color !important
 
 .logoContainer
     padding-left: 1%
@@ -107,53 +60,133 @@ svg:hover
     fill: variables.$text-color
     transition: fill .3s
 
-.navGithub
-    width: 40px
-    height: 40px
-    padding-right: 6%
-    transition: all .3s
+@media only screen and (max-width: 1000px)
+    .hidden
+        display: none
 
-.hamburgerMenuContainer
-    position: absolute
-    height: 20px
-    width: 33px
-    right: 0
-    margin-right: 2%
+    .hamburgerMenu
+        display: block !important
 
-.hamburgerMenuContainer:hover
-    cursor: pointer
-
-.hamburgerMenu
-    height: 2px
-    width: 100%
-    margin-top: 9px
-    border-radius: 10px
-    background-color: variables.$text-color
-    transition: width .2s cubic-bezier(.35,.37,.55,.51)
-    
-    &::before, &::after
-        content: ''
+    .link
+        position: relative
+        display: block
+        padding-bottom: 10%
+        color: variables.$text-color-darker
+        transition: color 1s
+        
+    .link::after
+        content:''
         position: absolute
-        height: 2px
-        width: 100%
-        border-radius: 10px
-        background-color: variables.$text-color
-        transition: transform .3s
-        transform-origin: center
-    
-    &::before
-        top: 0
-    
-    &::after
-        bottom: 0
+        width: 50%
+        height: 1px
+        top: 1.75em
+        left: 25%
+        background-color: variables.$background-color-lightest
 
-.hamburgerActive
-    width: 0
+    .hiddenLinks
+        visibility: hidden !important
+        right: -50vw !important
+
     .linksContainer
         visibility: visible
+        position: absolute
+        top: max(8vh, 60px)
+        right: 0
+        width: 50vw
+        height: 100vh
+        text-align: center
+        background-color: variables.$background-color-lighter
+        transition: right .5s, visibility .5s
+        z-index: 11
 
-.hamburgerActive::before
-    transform: translate(0, 9px) rotate(45deg)
+    .navGithub
+        width: 40px
+        height: 40px
+        padding-right: 6%
+        transition: all .3s
 
-.hamburgerActive::after
-    transform: translate(0, -9px) rotate(-45deg)
+    .hamburgerMenuContainer
+        position: absolute
+        height: 20px
+        width: 33px
+        right: 0
+        margin-right: 2%
+
+    .hamburgerMenuContainer:hover
+        cursor: pointer
+
+    .hamburgerMenu
+        height: 2px
+        width: 100%
+        margin-top: 9px
+        border-radius: 10px
+        background-color: variables.$text-color
+        transition: width .2s cubic-bezier(.35,.37,.55,.51)
+        
+        &::before, &::after
+            content: ''
+            position: absolute
+            height: 2px
+            width: 100%
+            border-radius: 10px
+            background-color: variables.$text-color
+            transition: transform .3s
+            transform-origin: center
+        
+        &::before
+            top: 0
+        
+        &::after
+            bottom: 0
+
+    .hamburgerActive
+        width: 0
+
+        .linksContainer
+            visibility: visible
+
+    .hamburgerActive::before
+        transform: translate(0, 9px) rotate(45deg)
+
+    .hamburgerActive::after
+        transform: translate(0, -9px) rotate(-45deg)
+    
+@media only screen and (min-width: 1000px)
+    .hamburgerMenu
+        display: none
+
+    .linksContainer
+        flex-basis: 100%
+        width: 100%
+        text-align: right
+    
+    .activeLink:hover::after
+        transform: scaleX(0) !important
+
+    .link
+        position: relative
+        font-size: 20px
+        margin-right: 2%
+        color: variables.$text-color-darker
+    
+    .link::after
+        content: ''
+        width: 100%
+        height: 2px
+        position: absolute
+        bottom: .15rem
+        left: 0
+        z-index: 0
+        transform: scaleX(0)
+        background-color: variables.$highlight-color
+        transform-origin: bottom right
+        transition: transform .3s
+
+    .link:hover::after
+        width: 100%
+        transform: scaleX(1)
+        transform-origin: bottom left
+
+
+    .socials
+        display: none
