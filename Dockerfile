@@ -5,5 +5,5 @@ COPY . .
 RUN npm install -g gatsby-cli
 RUN npm ci
 RUN gatsby build
-CMD ["gatsby", "serve"]
+CMD ["gatsby", "serve", "-H", "0.0.0.0"]
 EXPOSE 9000
