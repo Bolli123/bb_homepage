@@ -25,7 +25,7 @@ svg
     stroke: variables.$text-color
     transition: all .3s
 
-svg:hover
+svg:focus, svg:hover
     stroke: variables.$highlight-color
     transition: all .3s
 
@@ -33,7 +33,7 @@ svg:hover
     font-family: variables.$font-headings
     font-size: 1.5rem
 
-.link:hover
+link:focus, .link:hover
     color: variables.$text-color
     transition: color 0.1s
     text-decoration-color: variables.$highlight-color
@@ -85,18 +85,21 @@ svg:hover
 
     .hiddenLinks
         visibility: hidden !important
-        right: -50vw !important
+        transform: translateX(50vw) !important
+        transition: transform .5s, visibility .5s
 
     .linksContainer
-        visibility: visible
-        position: absolute
-        top: max(8vh, 60px)
+        $top: max(8vh, 60px)
+        position: fixed
+        display: inline-block
+        top: $top
         right: 0
         width: 50vw
-        height: 100vh
+        height: calc(100vh - $top)
+        overflow: hidden
         text-align: center
         background-color: variables.$background-color-lighter
-        transition: right .5s, visibility .5s
+        transition: transform .5s, visibility .5s
         z-index: 11
 
     .navGithub

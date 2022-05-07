@@ -12,9 +12,6 @@ const Layout = ({ children }: ChildrenProps ) => {
             <div className="content">
                 { children }
             </div>
-            <footer className="footer">
-                Designed and implemented by Björn Breki
-            </footer>
         </div>
     )
   }

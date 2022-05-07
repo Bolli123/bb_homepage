@@ -1,10 +1,9 @@
 import * as React from "react"
 import "../styles/index.sass"
-import NavBar from "../components/navbar";
 import { Link } from "gatsby";
 import Layout from "../components/layout";
 
-const aboutMes = ['Björn', 'a developer', 'an idiot', 'a big boy']
+const aboutMes = ['Björn', 'a developer']
 
 const IndexPage = () => {
   //States

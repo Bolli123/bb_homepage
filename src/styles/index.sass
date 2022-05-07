@@ -9,6 +9,7 @@ body
     font-family: variables.$font-terminal
     overflow: hidden
     height: 100%
+
     
 h1
     color: variables.$text-color
@@ -30,22 +31,6 @@ span
         opacity: 0
     100%
         opacity: 0
-    
-.blinking::after
-    animation: blink 1s steps(2) infinite
-        
-.typeWriter::after
-    content: "|"
-    width: 0
-    height: 0
-    margin-left: -2px
-    display: inline-block
-    opacity: 1
-    color: variables.$highlight-color
-
-.typeWriter
-    font-size: 1.5rem
-    color: variables.$text-color-darker
 
 .backgroundText
     position: absolute
@@ -67,20 +52,39 @@ span
     white-space: -o-no-wrap
     white-space: nowrap
 
+.introContainer
+    position: absolute
+    display: inline-block
+    top: 50%
+    left: 50%
+    width: 70%
+    transform: translate(-31%, -30%)
+    overflow: hidden
+
 .introText
     display: block
-    margin: 0 0 0.5% 0
+    width: 100%
+    margin: 0 0 1% 0
 
 .introText::after
     content: ';'
     text-shadow: functions.shadow(variables.$highlight-color, 0.2, 10)
 
-.introContainer
-    position: absolute
-    top: 50%
-    left: 50%
-    width: 100%
-    transform: translate(-22%, -30%)
+.blinking::after
+    animation: blink 1s steps(2) infinite
+        
+.typeWriter::after
+    content: "|"
+    width: 0
+    height: 0
+    margin-left: -2px
+    display: inline-block
+    opacity: 1
+    color: variables.$highlight-color
+
+.typeWriter
+    font-size: 1.5rem
+    color: variables.$text-color-darker
 
 button
     background-color: variables.$background-color-lighter
@@ -128,3 +132,4 @@ footer
     right: 1%
     color: variables.$text-color-darker
     font-size: .7rem
+    

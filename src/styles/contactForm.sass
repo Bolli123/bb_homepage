@@ -6,11 +6,6 @@
     width: 50%
     margin: 5% auto auto auto
 
-@media only screen and (max-width: 1000px)
-    .contactForm
-        width: 80%
-        margin-top: 10vh
-
 .inputContainer
     position: relative
     padding-bottom: 40px
@@ -19,8 +14,8 @@ label
     font-family: variables.$font-headings
     color: variables.$text-color-darkest
     position: absolute
-    top: 12px
-    left: 2px
+    top: 0.6rem
+    left: 0.12rem
     font-size: 20px
     pointer-events: none
     transition: transform .2s
@@ -79,3 +74,7 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label
     color: variables.$background-color
     transition: color .2s, background-color .2s
 
+@media only screen and (max-width: 1000px)
+    .contactForm
+        width: 80%
+        margin-top: 10vh
