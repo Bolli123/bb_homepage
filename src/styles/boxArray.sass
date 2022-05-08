@@ -1,4 +1,5 @@
-@use 'variables'
+@use 'styles' as *
+
 .boxArrayContainer
     height: 50vh
     width: 100%
@@ -10,7 +11,7 @@
 .box
     width: 2vw
     height: 2vw
-    background-color: variables.$background-color
+    background-color: $background-color
     float: left
     
 
@@ -22,12 +23,12 @@
     width: 1vw
     height: 1vw
     display: inline-block
-    background-color: variables.$background-color-lighter
+    background-color: $background-color-lighter
     transition: background-color 7s ease-out
     
 
 .box:hover::before
-    background-color: variables.$highlight-color
+    background-color: $highlight-color
     transition: background-color 0s
     
     

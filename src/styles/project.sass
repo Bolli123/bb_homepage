@@ -1,4 +1,4 @@
-@use 'variables'
+@use 'styles' as *
 
 .allProjects
     display: grid
@@ -11,7 +11,7 @@
 .projectContainer
     box-sizing: border-box
     display: inline-block
-    background-color: variables.$background-color-lighter
+    background-color: $background-color-lighter
     margin: .2%
     transform-style: preserve-3d
 
@@ -21,7 +21,7 @@
     width: 0
     height: 0
     border-left: 6px solid transparent
-    border-bottom: 6px solid variables.$highlight-color
+    border-bottom: 6px solid $highlight-color
     transform: translateZ(-1px)
 
 .projectContainer::before
@@ -43,7 +43,7 @@
 
 .projectContainer:hover
     transform: translate(6px, -6px)
-    box-shadow: -6px 6px variables.$highlight-color
+    box-shadow: -6px 6px $highlight-color
 
 .projectImg
     display: inline-block
@@ -71,7 +71,7 @@
     font-size: 0.8rem
     line-height: 1.2rem
     margin-bottom: 10%
-    color: variables.$text-color-dark
+    color: $text-color-dark
 
 .tagContainer
     position: absolute
@@ -80,11 +80,11 @@
 
 .projectTag
     font-size: 0.75rem
-    color: variables.$text-color-darker
+    color: $text-color-darker
     margin-right: 1rem
 
 .projectTag:hover
-    color: variables.$highlight-color
+    color: $highlight-color
     cursor: default
 
 .projectLinks
@@ -96,11 +96,11 @@
 
 .projectLink
     display: inline-block
-    fill: variables.$text-color
+    fill: $text-color
     transition: fill .3s
 
 .projectLink:hover
-    fill: variables.$highlight-color
+    fill: $highlight-color
     transition: fill .3s
 
 #githubSvg

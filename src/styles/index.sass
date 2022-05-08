@@ -1,23 +1,22 @@
-@use 'variables'
-@use 'functions'
+@use 'styles' as *
 
 html *
-    color: variables.$text-color
+    color: $text-color
 
 body
-    background-color: variables.$background-color
-    font-family: variables.$font-terminal
+    background-color: $background-color
+    font-family: $font-terminal
     overflow: hidden
     height: 100%
     -webkit-font-smoothing: antialiased
     
 h1
-    color: variables.$text-color
+    color: $text-color
     font-size: calc(30px + 1.2vw)
     font-weight: normal
 
 span
-    color: variables.$text-color
+    color: $text-color
 
 .container
     height: 100%
@@ -25,7 +24,7 @@ span
 @keyframes blink
     0%
         opacity: 1
-    49%
+    49% 
         opacity: 1
     50%
         opacity: 0
@@ -39,9 +38,9 @@ span
     transform: translate(-50%, -50%)
     z-index: -1
     overflow: hidden
-    color: variables.$background-color-lighter 
-    font-size: variables.$background-font-size
-    text-shadow: functions.shadow(variables.$background-color-lightest, 0.25, 20)
+    color: $background-color-lighter 
+    font-size: $background-font-size
+    text-shadow: shadow($background-color-lightest, 0.25, 20)
 
     -webkit-user-select: none    
     -moz-user-select: none
@@ -68,7 +67,7 @@ span
 
 .introText::after
     content: ';'
-    text-shadow: functions.shadow(variables.$highlight-color, 0.2, 10)
+    text-shadow: shadow($highlight-color, 0.2, 10)
 
 .blinking::after
     animation: blink 1s steps(2) infinite
@@ -80,14 +79,14 @@ span
     margin-left: -2px
     display: inline-block
     opacity: 1
-    color: variables.$highlight-color
+    color: $highlight-color
 
 .typeWriter
     font-size: 1.5rem
-    color: variables.$text-color-darker
+    color: $text-color-darker
 
 button
-    background-color: variables.$background-color-lighter
+    background-color: $background-color-lighter
     display: block
 
 .header
@@ -95,8 +94,8 @@ button
     text-align: center
     display: block
     font-weight: 900
-    font-family: variables.$font-headings
-    text-shadow: functions.shadow(variables.$highlight-color, 0.25, 20)
+    font-family: $font-headings
+    text-shadow: shadow($highlight-color, 0.25, 20)
 
 .navigationList
     list-style-type: none
@@ -130,6 +129,6 @@ footer
     position: fixed
     bottom: 1%
     right: 1%
-    color: variables.$text-color-darker
+    color: $text-color-darker
     font-size: .7rem
     

@@ -1,4 +1,4 @@
-@use 'variables'
+@use 'styles' as *
 
 .contactBackgroundText
     font-size: 24vw
@@ -14,9 +14,13 @@
     position: relative
     padding-bottom: 40px
 
+.inputContainerBottom
+    position: relative
+    padding-bottom: 10px
+
 label
-    font-family: variables.$font-headings
-    color: variables.$text-color-darkest
+    font-family: $font-headings
+    color: $text-color-darkest
     position: absolute
     top: 0.6rem
     left: 0.12rem
@@ -24,29 +28,34 @@ label
     pointer-events: none
     transition: transform .2s
 
+.requiredInput::after
+    content: '*'
+    display: inline-block
+    color: red
+    font-size: 15px
+    transform: translateY(-7px)
+
 .txtAreaLbl
     top: 2px
 
-input, textarea
-    font-family: variables.$font-headings
+.textInput
+    font-family: $font-headings
     font-size: 20px
     width: 100%
     height: 45px
     min-height: 25px
-    background-color: variables.$background-color-lighter
+    background-color: $background-color-lighter
     border: 0
-    border-bottom: 1px solid variables.$highlight-color
+    border-bottom: 1px solid $highlight-color
     resize: none
 
-input:focus + label, input:not(:placeholder-shown) + label
+.textInput:focus + label, .textInput:not(:placeholder-shown) + label
     transform: translate(0, -2.5rem)
-    color: variables.$text-color
+    color: $text-color
     transition: transform .2s
 
-textarea:focus + label, textarea:not(:placeholder-shown) + label
-    transform: translate(0, -2rem)
-    color: variables.$text-color
-    transition: transform .2s
+.textInput:focus + .requiredInput::after, .textInput:not(:placeholder-shown) + .requiredInput::after
+    display: none
 
 .resizable
     resize: vertical
@@ -54,9 +63,16 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label
     max-height: 30vh
     overflow: auto
 
+.validationLabel
+    text-align: right
+
+.validationLabel::before
+    content: '*'
+    color: red
+
 .contactSubmit
     font-size: 20px
-    font-family: variables.$font-headings
+    font-family: $font-headings
     font-weight: 700
 
     margin-right: auto
@@ -64,19 +80,21 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label
     margin-top: 5%
 
     text-decoration: none
-    color: variables.$text-color
-    background-color: variables.$background-color
-    border: .05em solid variables.$text-color
+    color: $text-color
+    background-color: $background-color
+    border: .05em solid $text-color
     border-radius: .2em
     padding: .5em 1em .5em 1em
     transition: color .2s, background-color .2s
 
-
 .contactSubmit:hover
     cursor: pointer
-    background-color: variables.$text-color
-    color: variables.$background-color
+    background-color: $text-color
+    color: $background-color
     transition: color .2s, background-color .2s
+
+.invalidInput
+    border-color: red
 
 @media only screen and (max-width: 1000px)
     .contactForm

@@ -1,5 +1,4 @@
-@use 'variables'
-@use 'functions'
+@use 'styles' as *
 
 body
     margin-top: 8vh
@@ -13,7 +12,7 @@ nav
     left: 0
     display: flex
     align-items: center
-    background-color: variables.$background-color-lighter
+    background-color: $background-color-lighter
     width: 100%
     height: 8vh
     min-height: 60px
@@ -22,27 +21,27 @@ nav
     fill: none
     stroke-width: 2
     stroke-linecap: round
-    stroke: variables.$text-color
+    stroke: $text-color
     transition: stroke .3s
 
 .githubSvg:focus, .githubSvg:hover, .personalLogo:hover
-    stroke: variables.$highlight-color
+    stroke: $highlight-color
     transition: stroke .3s
 
 
 .link
-    font-family: variables.$font-headings
+    font-family: $font-headings
     font-size: 1.5rem
 
 link:focus, .link:hover
-    color: variables.$text-color
+    color: $text-color
     transition: color 0.1s
-    text-decoration-color: variables.$highlight-color
+    text-decoration-color: $highlight-color
 
 .activeLink
     text-decoration: underline
-    text-decoration-color: variables.$highlight-color
-    color: variables.$text-color !important
+    text-decoration-color: $highlight-color
+    color: $text-color !important
 
 .logoContainer
     padding-left: 1%
@@ -51,14 +50,14 @@ link:focus, .link:hover
     flex-grow: 1
     width: 4vw
     min-width: 70px
-    fill: variables.$background-color-lighter
+    fill: $background-color-lighter
     stroke-width: 30
-    stroke: variables.$text-color
+    stroke: $text-color
     transition: fill .3s
     overflow: visible
 
 .personalLogo:hover
-    fill: variables.$text-color
+    fill: $text-color
     transition: fill .3s
 
 @media only screen and (max-width: 1000px)
@@ -72,7 +71,7 @@ link:focus, .link:hover
         position: relative
         display: block
         padding-bottom: 10%
-        color: variables.$text-color-darker
+        color: $text-color-darker
         transition: color 1s
         
     .link::after
@@ -82,7 +81,7 @@ link:focus, .link:hover
         height: 1px
         top: 1.75em
         left: 25%
-        background-color: variables.$background-color-lightest
+        background-color: $background-color-lightest
 
     .hiddenLinks
         visibility: hidden !important
@@ -99,7 +98,7 @@ link:focus, .link:hover
         height: calc(100vh - $top)
         overflow: hidden
         text-align: center
-        background-color: variables.$background-color-lighter
+        background-color: $background-color-lighter
         transition: transform .5s, visibility .5s
         z-index: 11
 
@@ -123,7 +122,7 @@ link:focus, .link:hover
         width: 100%
         margin-top: 9px
         border-radius: 10px
-        background-color: variables.$text-color
+        background-color: $text-color
         transition: width .2s cubic-bezier(.35,.37,.55,.51)
         
         &::before, &::after
@@ -132,7 +131,7 @@ link:focus, .link:hover
             height: 2px
             width: 100%
             border-radius: 10px
-            background-color: variables.$text-color
+            background-color: $text-color
             transition: transform .3s
             transform-origin: center
         
@@ -170,7 +169,7 @@ link:focus, .link:hover
         position: relative
         font-size: 20px
         margin-right: 2%
-        color: variables.$text-color-darker
+        color: $text-color-darker
     
     .link::after
         content: ''
@@ -181,7 +180,7 @@ link:focus, .link:hover
         left: 0
         z-index: 0
         transform: scaleX(0)
-        background-color: variables.$highlight-color
+        background-color: $highlight-color
         transform-origin: bottom right
         transition: transform .3s
 

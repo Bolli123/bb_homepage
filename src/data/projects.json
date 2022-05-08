@@ -10,7 +10,7 @@
     },
     {
         "title": "Garry's Mod",
-        "description": "I have helped develop gamemodes and modules for garry's mod for years which are used by hundreds of players every day",
+        "description": "I have helped develop gamemodes and modules for garry's mod for years which are used by hundreds of players every day.",
         "image": "gmod",
         "github": "",
         "tags": [
@@ -20,7 +20,7 @@
     },
     {
         "title": "Sorting visualizer",
-        "description": "Sorting visualizer in react that helped me and others on how sorting algorithms work",
+        "description": "Sorting visualizer made in react that helped me and others understand how sorting algorithms work.",
         "image": "sortingVisualizer",
         "github": "https://github.com/bjornt18/ReactSortingVisualizer",
         "tags": [
@@ -28,7 +28,7 @@
             "Javascript",
             "CSS"
         ],
-        "externalLink": "http://hdl.handle.net/1946/39348"
+        "externalLink": "https://bjornt18.github.io/ReactSortingVisualizer"
     },
     {
         "title": "Flappy Bird",
@@ -41,7 +41,7 @@
     },
     {
         "title": "Homepage",
-        "description": "A simple portfolio homepage created with Gatsby and SASS",
+        "description": "A simple portfolio homepage created with Gatsby and SASS.",
         "image": "homepage",
         "github": "https://github.com/bjornt18/bb_homepage",
         "tags": [
@@ -52,7 +52,7 @@
     },
     {
         "title": "C# API",
-        "description": "C# API that compiles a bunch of crypto API's",
+        "description": "C# API that compiles a bunch of crypto API's.",
         "image": "cApi",
         "github": "https://github.com/bjornt18/flappybird/",
         "tags": [
