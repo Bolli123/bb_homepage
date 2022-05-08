@@ -3,12 +3,12 @@ import "../styles/index.sass"
 import { Link } from "gatsby";
 import Layout from "../components/layout";
 
-const aboutMes = ['Björn', 'a developer']
+const aboutMes = ['a developer', 'Björn']
 
 const IndexPage = () => {
   //States
   const [aboutMeIndex, setAboutMeIndex] = React.useState<number>(0)
-  const [selectedAbout, setSelectedAbout] = React.useState<string>(aboutMes[0])
+  const [selectedAbout, setSelectedAbout] = React.useState<string>(aboutMes[1])
   const [aboutIndex, setAboutIndex] = React.useState<number>(0)
   const [typeWriterForwards, setTypeWriterForwards] = React.useState<boolean>(true)
   const [cursorBlinking, setCursorBlinking] = React.useState<boolean>(false)

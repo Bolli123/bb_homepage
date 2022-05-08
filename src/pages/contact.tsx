@@ -7,6 +7,7 @@ const Contact = () => {
     return (
       <Layout>
         <div>
+          <div className="backgroundText contactBackgroundText">Contact</div>
             <ContactForm> </ContactForm>
         </div>
       </Layout>

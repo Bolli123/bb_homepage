@@ -15,7 +15,7 @@ const Projects = () => {
     return (
       <Layout>
         <div className="container">
-            <div className="backgroundText"> [&nbsp;&nbsp;] </div>
+            <div className="backgroundText hidden"> [&nbsp;&nbsp;] </div>
             <h1 className="header" style={{transform: 'translateY(' + headerPos + ')'}}>Projects</h1>
             <div className="allProjects">
               {Object.keys(projects).map((key, i) => (
