@@ -18,16 +18,17 @@ nav
     height: 8vh
     min-height: 60px
 
-svg
+.githubSvg
     fill: none
     stroke-width: 2
     stroke-linecap: round
     stroke: variables.$text-color
-    transition: all .3s
+    transition: stroke .3s
 
-svg:focus, svg:hover
+.githubSvg:focus, .githubSvg:hover, .personalLogo:hover
     stroke: variables.$highlight-color
-    transition: all .3s
+    transition: stroke .3s
+
 
 .link
     font-family: variables.$font-headings

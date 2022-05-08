@@ -3,45 +3,38 @@
         "title": "Representation learning",
         "description": "Representation learning for multivariate time series for detecting artefacts in sleep data assist automatic analysis of sleep recordings.",
         "image": "repLearning",
-        "links": [
-            "http://hdl.handle.net/1946/39348"
-        ],
         "tags": [
             "Python"
-        ]
+        ],
+        "externalLink": "http://hdl.handle.net/1946/39348"
     },
     {
         "title": "Garry's Mod",
         "description": "I have helped develop gamemodes and modules for garry's mod for years which are used by hundreds of players every day",
         "image": "gmod",
-        "links": [
-            
-        ],
+        "github": "",
         "tags": [
             "Lua/GLua"
         ]
         
     },
     {
-        "title": "Sorting visualizer in React",
+        "title": "Sorting visualizer",
         "description": "Sorting visualizer in react that helped me and others on how sorting algorithms work",
         "image": "sortingVisualizer",
-        "links": [
-            "https://github.com/bjornt18/ReactSortingVisualizer"
-        ],
+        "github": "https://github.com/bjornt18/ReactSortingVisualizer",
         "tags": [
             "React",
             "Javascript",
             "CSS"
-        ]
+        ],
+        "externalLink": "http://hdl.handle.net/1946/39348"
     },
     {
-        "title": "Flappy Bird in Lua",
+        "title": "Flappy Bird",
         "description": "A flappy bird clone made to be as authentic to the original game with a few gameplay additions.",
         "image": "birdUp",
-        "links": [
-            "https://github.com/bjornt18/flappybird/"
-        ],
+        "github": "https://github.com/bjornt18/flappybird/",
         "tags": [
             "Lua/GLua"
         ]
@@ -50,9 +43,7 @@
         "title": "Homepage",
         "description": "A simple portfolio homepage created with Gatsby and SASS",
         "image": "homepage",
-        "links": [
-            "https://github.com/bjornt18/bb_homepage"
-        ],
+        "github": "https://github.com/bjornt18/bb_homepage",
         "tags": [
             "React",
             "Typescript",
@@ -63,9 +54,7 @@
         "title": "C# API",
         "description": "C# API that compiles a bunch of crypto API's",
         "image": "cApi",
-        "links": [
-            "https://github.com/bjornt18/flappybird/"
-        ],
+        "github": "https://github.com/bjornt18/flappybird/",
         "tags": [
             ".NET",
             "C#"
@@ -75,9 +64,7 @@
         "title": "Networked Pong",
         "description": "A multiplayer pong game that can be played on seperate computers through the windows terminal.",
         "image": "pong",
-        "links": [
-            "https://github.com/bjornt18/flappybird/"
-        ],
+        "github": "https://github.com/bjornt18/flappybird/",
         "tags": [
             "C/C++",
             "Bash"
@@ -87,9 +74,7 @@
         "title": "Cinema App",
         "description": "An app that aggregates movies being shown in Icelandic cinemas.",
         "image": "cinema",
-        "links": [
-            "https://github.com/bjornt18/flappybird/"
-        ],
+        "github": "https://github.com/bjornt18/flappybird/",
         "tags": [
             "React",
             "Javascript",
