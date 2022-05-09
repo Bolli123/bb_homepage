@@ -54,7 +54,7 @@ const ContactForm = () => {
       Message: message
     }
     if (validateForm(mailData)) {
-      //sendEmail(mailData)
+      sendEmail(mailData)
       setSuccessModal(true)
       setTimeout(() => {
         setSuccessModal(false)
