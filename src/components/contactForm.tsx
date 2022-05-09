@@ -12,21 +12,20 @@ const ContactForm = () => {
   const [message, setMessage] = useState('')
   const [validEmail, setValidEmail] = useState(true)
   const [validMsg, setValidMsg] = useState(true)
+  const [successModal, setSuccessModal] = useState(false)
 
   function validateForm(data : EmailContent) {
-    if (data.Email !== '') {
-      setValidEmail(true)
+    let emailValid = true
+    let msgValid = true
+    if (data.Email === '') {
+      emailValid = false
     }
-    else {
-      setValidEmail(false)
+    if (data.Message === '') {
+      msgValid = false
     }
-    if (data.Message !== '') {
-      setValidMsg(true)
-    }
-    else {
-      setValidMsg(false)
-    }
-    return (validEmail && validMsg)
+    setValidEmail(emailValid)
+    setValidMsg(msgValid)
+    return (emailValid && msgValid)
   }
 
   function sendEmail(data : EmailContent) {
@@ -55,9 +54,12 @@ const ContactForm = () => {
       Message: message
     }
     if (validateForm(mailData)) {
-      sendEmail(mailData)
+      //sendEmail(mailData)
+      setSuccessModal(true)
+      setTimeout(() => {
+        setSuccessModal(false)
+      }, 10000)
     }
-
   }
   return (
     <div className="contactFormContainer">
@@ -75,11 +77,19 @@ const ContactForm = () => {
           <textarea value={message} placeholder=" " id="inpMsg" name="inpMsg" className={"textInput resizable " + (validMsg ? "" : "invalidInput")} onChange={(e) => setMessage(e.target.value)}/>
           <label className="inputLabel txtAreaLbl requiredInput">Message</label>
         </div>
-        <div className="validationLabel" style={{display: (validEmail || validMsg) ? "none" : "block"}}>
+        <div className="validationLabel" style={{visibility: (validEmail || validMsg) ? "hidden" : "visible"}}>
           Inputs are required
         </div>
           <button type="submit" value="Submit" className="contactSubmit">Submit</button>
       </form>
+      <div className={"formSuccessContainer " + (successModal ? "successSubmit" : "")}>
+          <div className="successHeader">
+            Message Sent!
+          </div>
+          <div className="successBody">
+            Thank you for the message, I will be in touch!
+          </div>
+      </div>
     </div>
     )
   }
