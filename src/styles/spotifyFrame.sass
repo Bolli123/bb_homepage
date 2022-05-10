@@ -1,0 +1,46 @@
+@use 'styles' as *
+
+.spotifyFrame
+    position: relative
+    display: inline-block
+    white-space: nowrap
+    width: 300px
+    transition: transform .25s
+    text-decoration: none
+    &:hover
+        transform: translateY(-1%)
+        transition: transform .25s
+        cursor: pointer
+        .spotifySvg
+            fill: $success-color
+            cursor: pointer
+            transition: fill .25s
+
+.frameHeader
+    box-sizing: border-box
+    padding: 4%
+    background-color: $background-color-lighter
+    border-top-left-radius: 5px
+    border-top-right-radius: 5px
+
+.spotifySvg
+    position: absolute
+    top: 2.5%
+    right: 2.5%
+    width: 7%
+    fill: $text-color
+    transition: fill .25s
+
+.title
+    width: 250px
+    font-weight: bold
+    overflow: hidden
+    text-overflow: ellipsis
+    padding-bottom: 2%
+
+.altTitle
+    font-style: italic
+
+.spotifyImage
+    width: 300px
+    margin: auto

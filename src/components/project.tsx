@@ -1,14 +1,14 @@
 import React from "react"
 import "../styles/project.sass"
 import images from "../images/imageMapper"
-import LinkSvg from '../images/svg/link.svg'
 
 type ProjectProps = {
     title: string
     description: string
     image: string
-    links: Array<string>
+    github?: string
     tags: Array<string>
+    externalLink?: string
 }
 
 const Project = ({project} : {project: ProjectProps}) => {

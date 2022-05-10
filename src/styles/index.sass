@@ -1,12 +1,20 @@
 @use 'styles' as *
 
+html, body, form, fieldset, table, tr, td, img 
+    font-family: $font-headings
+
+input, button, select, textarea, optgroup, option
+    font-family: inherit
+    font-size: inherit
+    font-style: inherit
+    font-weight: inherit
+
+
 html *
     color: $text-color
 
 body
     background-color: $background-color
-    font-family: $font-terminal
-    overflow: hidden
     height: 100%
     -webkit-font-smoothing: antialiased
     
@@ -38,7 +46,8 @@ span
     transform: translate(-50%, -50%)
     z-index: -1
     overflow: hidden !important
-    color: $background-color-lighter 
+    color: $background-color-lighter
+    font-family: $font-terminal !important
     font-size: $background-font-size
     text-shadow: shadow($background-color-lightest, 0.25, 20)
 
@@ -59,6 +68,7 @@ span
     width: 70%
     transform: translate(-31%, -30%)
     overflow: hidden
+    font-family: $font-terminal !important
 
 .introText
     display: block
@@ -94,7 +104,6 @@ button
     text-align: center
     display: block
     font-weight: 900
-    font-family: $font-headings
     text-shadow: shadow($highlight-color, 0.25, 20)
 
 .navigationList

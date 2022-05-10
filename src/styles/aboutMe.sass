@@ -1,28 +1,56 @@
-.aboutMeContainer
-    height: 100%
+.aboutMeWrapper
     width: 100%
-
-.aboutMeLeftSide
-    display: inline-block
-    width: 50%
-    float: left
     
-.aboutMeRightSide
-    display: inline-block
-    width: 50%
-
+.aboutMeContainer
+    width: 1180px
+    vertical-align: middle
+    margin: auto
+    
 .aboutIntro
-    margin-top: 10%
-    margin-left: 2%
-    text-align: left 
-    
-.aboutText
-    box-sizing: border-box
-    padding: 2%
-    line-height: 1.9rem
-    font-size: calc(0.6vw + 12px)
+    display: block
+    margin: 13% 0 2% 0 
+    text-align: left
 
+.aboutInfoHeader
+    font-weight: bold
+    font-size: 2rem
+    line-height: 2.5rem
+    width: 555px
+    margin: 0
 
-@media only screen and (max-width: 1000px)
-    .aboutText
-        width: 90%
+.aboutInfo
+    line-height: 2rem
+    width: 555px
+
+.aboutLeft
+    float: left
+    padding-right: 70px
+
+.aboutRight
+    display: inline
+
+.aboutMeImage
+    border-radius: 10px
+    width: 555px
+
+.musicIntro::after
+    content: '*Within the last month'
+    display: block
+    font-size: 0.8rem
+    font-weight: normal
+    text-shadow: none
+.aboutMusic
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    gap: 2vw
+    justify-items: center
+
+@media only screen and (max-width: 1200px)
+    .aboutMeContainer
+        width: 60%
+    .aboutLeft
+        float: none
+
+    .aboutMusic
+        grid-template-columns: 1fr
+        gap: 20px

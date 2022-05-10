@@ -6,5 +6,6 @@ export default {
     "cApi": require("./c-api.png"),
     "pong": require("./pong.png"),
     "homepage": require("./homepage.png"),
-    "cinema": require("./cinema.png")
+    "cinema": require("./cinema.png"),
+    "mia": require("./mia.jpg")
 }

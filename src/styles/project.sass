@@ -3,7 +3,7 @@
 .allProjects
     display: grid
     grid-template-columns: repeat(3, 1fr)
-    grid-gap: 12px
+    gap: 12px
     width: 70%
     height: 55vh
     margin: auto
@@ -15,35 +15,37 @@
     margin: .2%
     transform-style: preserve-3d
 
-.projectContainer::before, .projectContainer::after
-    content: ''
-    position: absolute
-    width: 0
-    height: 0
-    border-left: 6px solid transparent
-    border-bottom: 6px solid $highlight-color
-    transform: translateZ(-1px)
+    &::before, &::after
+        content: ''
+        position: absolute
+        width: 0
+        height: 0
+        border-left: 6px solid transparent
+        border-bottom: 6px solid $highlight-color
+        transform: translateZ(-1px)
 
-.projectContainer::before
-    left: 0
-    display: none
+    &::before
+        left: 0
+        display: none
+        transform: translate(-6px) 
 
-.projectContainer::after
-    right: 0
-    bottom: 0
-    display: none
+    &::after
+        right: 0
+        bottom: 0
+        display: none
+        transform: translate(0px, 6px) rotate(180deg) 
 
-.projectContainer:hover::before
-    display: block
-    transform: translate(-6px) 
+    &:hover::before
+        display: block
+        
 
-.projectContainer:hover::after
-    display: block
-    transform: translate(0px, 6px) rotate(180deg) 
+    &:hover::after
+        display: block
+        
 
-.projectContainer:hover
-    transform: translate(6px, -6px)
-    box-shadow: -6px 6px $highlight-color
+    &:hover
+        transform: translate(6px, -6px)
+        box-shadow: -6px 6px $highlight-color
 
 .projectImg
     display: inline-block

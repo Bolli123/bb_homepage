@@ -78,7 +78,7 @@ const ContactForm = () => {
           <label className="inputLabel txtAreaLbl requiredInput">Message</label>
         </div>
         <div className="validationLabel" style={{visibility: (validEmail || validMsg) ? "hidden" : "visible"}}>
-          Inputs are required
+          Fields are required
         </div>
           <button type="submit" value="Submit" className="contactSubmit">Submit</button>
       </form>
