@@ -33,24 +33,49 @@
     border-radius: 10px
     width: 555px
 
+.musicIntro
+    padding-top: 4%
+
 .musicIntro::after
     content: '*Within the last month'
     display: block
     font-size: 0.8rem
     font-weight: normal
     text-shadow: none
+
+.spotifyFrameInfo
+    font-size: 1.5rem
+    text-align: center
+    padding-bottom: 4%
+    font-style: italic
+    font-weight: bold
+
 .aboutMusic
-    display: grid
-    grid-template-columns: 1fr 1fr 1fr
-    gap: 2vw
-    justify-items: center
+    display: flex
+    justify-content: space-evenly
+    flex-wrap: wrap
 
 @media only screen and (max-width: 1200px)
     .aboutMeContainer
-        width: 60%
+        width: 85%
+
+    .aboutIntro
+        display: inline-block
+        width: 30%
+    
+    .aboutInfoHeader
+        width: 100%
+
+    .aboutInfo
+        width: 100%
+
     .aboutLeft
         float: none
+        padding: 0
+    
+    .aboutMeImage
+        width: 100%
 
-    .aboutMusic
-        grid-template-columns: 1fr
-        gap: 20px
+    .spotifyFrameInfo
+        padding-top: 5%
+    
