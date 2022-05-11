@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
 import SpotifyFrame from "../components/spotifyFrame"
@@ -5,17 +6,17 @@ import "../styles/aboutMe.sass"
 
 const AboutMe = () => {
     return (
-      <Layout>
+      <Layout titleHeader="About Me" route="aboutMe">
         <div className="aboutMeWrapper">
           <div className="aboutMeContainer">
           <h1 className="header aboutIntro">Hey!</h1>
             <div className="aboutLeft">
                 <h1 className="aboutInfoHeader"> I'm Björn. I live in Hafnarfjörður, Iceland. I love programming, music and food.  </h1>
-                <p className="aboutInfo"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p className="aboutInfo"> I'm {new Date().getFullYear() - 1998} years old and recently graduated from <a href="https://www.ru.is/">Reykjavík University</a> with a BSc. in Computer Science, I love all manner of software development and thrive on problem solving. </p>
                 
-                <p className="aboutInfo"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> 
+                <p className="aboutInfo"> When I'm not coding, I love to make and eat food, play guitar, listen to music and play video games. The only pictures I have on my phone are of my dog <b>Mía</b>, so why not share one here.  </p>
                 
-                <p className="aboutInfo">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                <p className="aboutInfo">If you have any questions, concerns or just want to chat, please do not hesitate to <Link to="/contact">contact me</Link>. </p>
             </div>
             <div className="aboutRight">
               <img className="aboutMeImage" src={require("../images/mia.jpg").default}/>
@@ -23,7 +24,7 @@ const AboutMe = () => {
             <h1 className="header musicIntro">Favorite Music</h1>
             <div className="aboutMusic">
               <div>
-                <div className="spotifyFrameInfo">Song</div>
+                <div className="spotifyFrameInfo">Track</div>
                 <SpotifyFrame title="There is a light that never goes out" altTitle="The Smiths" image="https://i.scdn.co/image/ab67616d0000b273ada101c2e9e97feb8fae37a9" link="https://open.spotify.com/track/0WQiDwKJclirSYG9v5tayI?"/>
               </div>
               <div>

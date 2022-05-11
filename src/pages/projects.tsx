@@ -4,19 +4,11 @@ import Project from "../components/project"
 import projects from "../data/projects.json"
 
 const Projects = () => {
-  const [headerPos, setHeaderPos] = React.useState<string>('0%')
-
-  React.useEffect(() => {
-    const interval = setInterval(() => setHeaderPos(headerPos + (Math.sin(+new Date * 7) * 20) + "%"), 50);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [])
     return (
-      <Layout>
+      <Layout titleHeader="Projects" route="projects">
         <div className="container">
             <div className="backgroundText hidden"> [&nbsp;&nbsp;] </div>
-            <h1 className="header" style={{transform: 'translateY(' + headerPos + ')'}}>Projects</h1>
+            <h1 className="header">Projects</h1>
             <div className="allProjects">
               {Object.keys(projects).map((key, i) => (
                     <Project key={key+1} project={projects[i]}></Project>

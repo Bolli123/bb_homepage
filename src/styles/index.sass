@@ -23,21 +23,30 @@ h1
     font-size: calc(30px + 1.2vw)
     font-weight: normal
 
-span
-    color: $text-color
+a
+    position: relative
+    color: $highlight-color
+    text-decoration: none
+    &::after
+        content: ''
+        width: 100%
+        height: 1px
+        position: absolute
+        bottom: 0
+        left: 0
+        z-index: 0
+        transform: scaleX(0)
+        background-color: $highlight-color
+        transform-origin: bottom right
+        transition: transform .3s
+
+    &:hover::after
+        width: 100%
+        transform: scaleX(1)
+        transform-origin: bottom left
 
 .container
     height: 100%
-
-@keyframes blink
-    0%
-        opacity: 1
-    49% 
-        opacity: 1
-    50%
-        opacity: 0
-    100%
-        opacity: 0
 
 .backgroundText
     position: absolute
@@ -141,3 +150,12 @@ footer
     color: $text-color-darker
     font-size: .7rem
     
+@keyframes blink
+    0%
+        opacity: 1
+    49% 
+        opacity: 1
+    50%
+        opacity: 0
+    100%
+        opacity: 0

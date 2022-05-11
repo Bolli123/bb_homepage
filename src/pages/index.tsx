@@ -6,7 +6,7 @@ import TypeWriter from "../components/typeWriter";
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout titleHeader="Developer" route="">
         <div className="container">
           <div className="backgroundText"> &lt;&nbsp;/&gt; </div>
           <div className="introContainer">

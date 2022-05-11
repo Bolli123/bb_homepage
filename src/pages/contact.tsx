@@ -1,14 +1,14 @@
 import React from "react"
-import ContactForm from "../components/contactForm.tsx"
+import ContactForm from "../components/contactForm"
 import Layout from "../components/layout"
 import "../styles/contactForm.sass"
 
 const Contact = () => {
     return (
-      <Layout>
+      <Layout titleHeader="Contact" route="contact">
         <div>
           <div className="backgroundText contactBackgroundText">Contact</div>
-            <ContactForm> </ContactForm>
+            <ContactForm/>
         </div>
       </Layout>
     )
