@@ -18,6 +18,7 @@ const Project = ({project} : {project: ProjectProps}) => {
             retLinks.push(
                 <a className="projectLink" href={project.externalLink} target="_blank" >
                     <svg
+                    className="projectSVG"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
