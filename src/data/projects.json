@@ -52,19 +52,21 @@
     },
     {
         "title": "C# API",
-        "description": "C# API that compiles a bunch of crypto API's.",
+        "description": "C# API that compiles a bunch of crypto API's. Uses RabbitMQ with simple microservices",
         "image": "cApi",
-        "github": "https://github.com/bjornt18/flappybird/",
+        "github": "https://github.com/bjornt18/cryptocop/",
         "tags": [
             ".NET",
-            "C#"
+            "Python",
+            "JS",
+            "PostgreSQL"
         ]
     },
     {
         "title": "Networked Pong",
         "description": "A multiplayer pong game that can be played on seperate computers through the windows terminal.",
         "image": "pong",
-        "github": "https://github.com/bjornt18/flappybird/",
+        "github": "https://github.com/bjornt18/pong",
         "tags": [
             "C/C++",
             "Bash"
@@ -74,7 +76,7 @@
         "title": "Cinema App",
         "description": "An app that aggregates movies being shown in Icelandic cinemas.",
         "image": "cinema",
-        "github": "https://github.com/bjornt18/flappybird/",
+        "github": "https://github.com/bjornt18/drCinema",
         "tags": [
             "React",
             "Javascript",

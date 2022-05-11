@@ -12,11 +12,11 @@ const AboutMe = () => {
           <h1 className="header aboutIntro">Hey!</h1>
             <div className="aboutLeft">
                 <h1 className="aboutInfoHeader"> I'm Björn. I live in Hafnarfjörður, Iceland. I love programming, music and food.  </h1>
-                <p className="aboutInfo"> I'm {new Date().getFullYear() - 1998} years old and recently graduated from <a href="https://www.ru.is/">Reykjavík University</a> with a BSc. in Computer Science, I love all manner of software development and thrive on problem solving. </p>
+                <p className="aboutInfo"> I'm {new Date().getFullYear() - 1998} years old and recently graduated from <a href="https://www.ru.is/" className="hyperlink">Reykjavík University</a> with a BSc. in Computer Science, I love all manner of software development and thrive on problem solving. </p>
                 
                 <p className="aboutInfo"> When I'm not coding, I love to make and eat food, play guitar, listen to music and play video games. The only pictures I have on my phone are of my dog <b>Mía</b>, so why not share one here.  </p>
                 
-                <p className="aboutInfo">If you have any questions, concerns or just want to chat, please do not hesitate to <Link to="/contact">contact me</Link>. </p>
+                <p className="aboutInfo">If you have any questions, concerns or just want to chat, please do not hesitate to <Link className="hyperlink" to="/contact">contact me</Link>. </p>
             </div>
             <div className="aboutRight">
               <img className="aboutMeImage" src={require("../images/mia.jpg").default}/>
