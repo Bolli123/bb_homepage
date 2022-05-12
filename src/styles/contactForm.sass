@@ -96,11 +96,14 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label
     padding: .5em 1em .5em 1em
     transition: color .2s, background-color .2s
 
-.contactSubmit:hover
+.contactSubmit:not(:disabled):hover
     cursor: pointer
     background-color: $text-color
     color: $background-color
     transition: color .2s, background-color .2s
+
+.contactSubmit:disabled
+    opacity: 0.6
 
 .invalidInput
     border-color: red
@@ -108,7 +111,7 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label
 .successSubmit
     transform: translateY(0%) !important
     visibility: visible !important
-    transition: transform .5s, visibility .5s
+    transition: transform .2s, visibility .2s
     &::before
         transform-origin: left
         transform: scaleX(0) !important
@@ -128,7 +131,7 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label
 
     transform: translateY(130%)
     visibility: hidden
-    transition: transform .5s, visibility .5s
+    transition: transform .2s, visibility .2s
 
     &::before
       content: ''
@@ -140,6 +143,9 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label
       background-color: $success-color
       transform: scaleX(1)
       visibility: hidden
+
+.errorSubmit::before
+    background-color: red !important
 
 .successHeader
     padding-bottom: 3%
