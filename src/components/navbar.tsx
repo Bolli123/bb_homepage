@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import React from "react" 
 import '../styles/navbar.sass'
 
-
 const Navbar = () => {
     const [hamburgerActive, setHamburgerActive] = React.useState<boolean>(false) 
     function handleBurgerMenuClick() {
