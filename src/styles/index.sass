@@ -1,5 +1,8 @@
 @use 'styles' as *
 
+body
+    overflow-x: hidden
+
 html, body, form, fieldset, table, tr, td, img 
     font-family: $font-headings
 
@@ -9,12 +12,25 @@ input, button, select, textarea, optgroup, option
     font-style: inherit
     font-weight: inherit
 
-
 html *
     color: $text-color
 
-*::selection
+::selection
     background: $highlight-color
+
+::-webkit-scrollbar
+    width: 10px
+
+::-webkit-scrollbar-track
+    background: $background-color-lightest
+
+::-webkit-scrollbar-thumb 
+    background: $highlight-color
+    border-radius: 20px
+
+::-webkit-scrollbar-thumb:hover
+    background: $highlight-color-lighter
+
 
 body
     background-color: $background-color
