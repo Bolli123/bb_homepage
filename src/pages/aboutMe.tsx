@@ -29,7 +29,7 @@ const AboutMe = () => {
 
   React.useEffect(() => {
     const fetchFavorites = async () => {
-      await fetch('http://bjornbreki.is:9001/getFavorites')
+      await fetch('https://api.bjornbreki.is/getFavorites')
       .then(response => response.json())
       .then(jsonResp => {
         setFavorites(jsonResp)
