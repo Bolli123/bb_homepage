@@ -1,5 +1,8 @@
 @use 'styles' as *
 
+.hidden
+    display: none
+
 .contactBackgroundText
     font-size: 23vw
     transform: translate(-50%, -50%) rotate(15deg)
@@ -81,6 +84,7 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label
     transform: translate(-5px,20px)
 
 .contactSubmit
+    position: relative
     font-size: 20px
     font-weight: 700
 
@@ -156,6 +160,23 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label
     height: 90%
     margin: 0
     padding-bottom: 3%
+
+.spinner
+    position: absolute
+    top: 5%
+    right: -50% 
+    width: 1.5rem
+    height: 1.5rem
+    border: .4rem solid $text-color
+    border-top: .4rem solid $highlight-color
+    border-radius: 50%
+    animation: spin .5s infinite linear
+
+@keyframes spin
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
 
 @media only screen and (max-width: 1000px)
     .contactForm

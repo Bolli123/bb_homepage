@@ -16,6 +16,7 @@ const ContactForm = () => {
   const [errorModal, setErrorModal] = useState(false)
   const [submitError, setSubmitError] = useState('')
   const [timer, setTimer] = useState(setTimeout(() => {}))
+  const [loading, setLoading] = useState(false)
 
   function validateForm(data : EmailContent) {
     let emailValid = true
@@ -32,6 +33,7 @@ const ContactForm = () => {
   }
 
   function sendEmail(data : EmailContent) {
+    setLoading(true)
     const requestOptions = {
       method: 'POST',
       headers : { 
@@ -40,7 +42,7 @@ const ContactForm = () => {
         },
       body: JSON.stringify({
         Name: data.Name,
-        Email: data.Email,
+        Email1: data.Email,
         Message: data.Message
       }
         )
@@ -48,7 +50,9 @@ const ContactForm = () => {
     fetch('https://public.herotofu.com/v1/7d248730-c426-11ec-a557-034a17e2da28', requestOptions)
         .then((response) => {
           if (response.status !== 200) {
-            throw new Error(`${response.statusText} (${response.status})`)
+            let err = new Error()
+            err.status = response.status
+            throw err
           }
           return response.json()
         }).then(() => {
@@ -58,16 +62,26 @@ const ContactForm = () => {
             setSuccessModal(false)
           }, 10000)
           setTimer(t)
+          setLoading(false)
         }).catch((err) => {
           setErrorModal(true)
-          setSubmitError(err.toString())
+          console.log(err.status)
+          if (err.status == 503) {
+            setSubmitError("Yikes, something must have broke. I'm sure I'll fix it.\nTry again later")
+          }
+          else if (err.status == 422) {
+            setSubmitError("Seems like you submitted the same thing again\nTry again later")
+          }
+          else {
+            setSubmitError(err.toString())
+          }
           clearTimeout(timer)
           const t = setTimeout(() => {
             setErrorModal(false)
           }, 10000)
           setTimer(t)
+          setLoading(false)
         })
-
   }
 
   function handleSubmit(e : SyntheticEvent) {
@@ -108,7 +122,9 @@ const ContactForm = () => {
         <div className="validationLabel" style={{visibility: (validEmail || validMsg) ? "hidden" : "visible"}}>
           Fields are required
         </div>
-          <button type="submit" value="Submit" disabled={successModal || errorModal} className="contactSubmit">Submit</button>
+        <button type="submit" value="Submit" disabled={successModal || errorModal} className="contactSubmit">Submit
+          <div className={"spinner" + (loading ? "" : " hidden")}/>
+        </button>
       </form>
       <div style={{color: "red"}} className={"formSuccessContainer " + ((successModal || errorModal) ? "successSubmit" : "") + (errorModal ? " errorSubmit" : "")}>
           <div className="successHeader">
